@@ -1,19 +1,13 @@
 import React, { Component } from 'react';
 import './App.css';
 import Home from './components/Home';
+import Forcast from './components/Forcast';
 import WeatherForm from './components/WeatherForm';
 import {
   BrowserRouter as Router,
   Route,
   Link
 } from 'react-router-dom'
-
-
-const Forcast = () => (
-  <div>
-    <h2>Forcast</h2>
-  </div>
-)
 
 const App = () => (
   <Router>
