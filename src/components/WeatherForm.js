@@ -2,6 +2,9 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import axios from 'axios';
 import '../App.css';
+import {
+  Link
+} from 'react-router-dom'
 
 class WeatherForm extends Component {
   constructor(props) {
@@ -59,12 +62,15 @@ class WeatherForm extends Component {
           autoComplete='off'
           onChange={this.handleChange}
         />
-        <button
+        <Link
           className='btn-primary'
-          type='submit'
-          disabled={!this.state.city}>
-            Get Weather 
-        </button>
+          to={{
+            pathname: 'forcast',
+            search: `?city=${this.state.city}`
+          }}
+        >
+          Get Weather
+        </Link>
       </form>
     )
   }
