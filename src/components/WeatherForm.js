@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import axios from 'axios';
 import '../App.css';
 
 class WeatherForm extends Component {
@@ -28,7 +29,23 @@ class WeatherForm extends Component {
 
   handleSubmit(event) {
     event.preventDefault();
-    console.log(this.state.city)
+
+    var apiKey = '1473773a78bb97f2960711c8392c2d7e'
+    var weather = `https://api.openweathermap.org/data/2.5/weather?q=${this.state.city}&type=accurate&APPID=${apiKey}`
+
+    var fiveDayForcast = `http://api.openweathermap.org/data/2.5/forecast?q=${this.state.city},us&appid=${apiKey}&cnt=5`
+
+      axios.get(weather).then(res => {
+        const weather = res.data;
+        this.setState({ weather });
+        console.log(this.state)
+      })
+
+      axios.get(fiveDayForcast).then(res => {
+        const fiveDayForcast = res.data;
+        this.setState({ fiveDayForcast });
+        console.log(this.state)
+      })
   }
 
   render() {
