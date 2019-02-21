@@ -1,25 +1,19 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
+import Home from './components/Home';
+import WeatherForm from './components/WeatherForm';
 
 class App extends Component {
   render() {
     return (
       <div className="App">
-          <div className="App-header row">
-            <h2>Weather Time!</h2>
-            <div className="row">
-							<input type="text" placeholder="Chattanooga, Tennessee" />
-							<button type="button" className="btn-primary">Get Weather</button>
-            </div>
+        <div className="App-header">
+          <h2>Weather Time!</h2>
+          <div className="row">
+            <WeatherForm flexDirection={'row'}/>
           </div>
-        <header className="App-hero">
-          <h1>
-            Enter a City and State
-          </h1>
-          <input type="text" placeholder="Chattanooga, Tennessee" />
-          <button type="button" className="btn-primary">Get Weather</button>
-        </header>
+        </div>
+        <Home/>
       </div>
     );
   }
