@@ -8,8 +8,24 @@
   pointer-events: none;
 }
 
+.row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0px 15px;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
 .App-header {
-  background-color: #282c34;
+  height: 80px;
+  background: lime;
+  font-color: 'white';
+}
+
+.App-hero {
+  background-color: fuchsia;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -19,15 +35,16 @@
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+input {
+  margin: 10px;
+  padding: 10px;
+  height: 34px;
+  width: 275px;
+  font-size: 18px;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.btn-primary {
+  padding: 10px;
+  color: purple;
+  background: cornsilk;
+  border-radius: 7px;
 }
