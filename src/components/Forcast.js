@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import axios from 'axios';
 import queryString from 'query-string';
+import Loading from './Loading';
 import '../App.css';
 
 class Forcast extends Component {
