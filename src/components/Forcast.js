@@ -8,6 +8,9 @@ import '../App.css';
 class Forcast extends Component {
   constructor(props) {
     super();
+    this.state = {
+      fiveDayForcast: null
+    };
   }
 
   componentDidMount() {
@@ -31,7 +34,11 @@ class Forcast extends Component {
 
   render() {
     return(
-      <h1>Forcast</h1>
+      <div>
+        {!this.state.fiveDayForcast
+          ? <Loading />
+          : <h1>Forcast</h1>}
+      </div>
     )
   }
 }
